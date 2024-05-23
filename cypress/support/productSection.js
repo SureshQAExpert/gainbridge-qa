@@ -1,4 +1,3 @@
-import { calculateProjectedAmount } from "../Utilities/projectedValueFunc";
 let amountValue;
 
 //locator
@@ -117,11 +116,18 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add(
+  "calculateProjectedAmount",
+  (principal, rate, duration) => {
+    const value = principal * Math.pow(1 + rate, duration);
+    return value.toFixed(2);
+  }
+);
+
+Cypress.Commands.add(
   "calculateProjectedAccountValue",
   (amount, rate, duration) => {
-    const calculatedValue = calculateProjectedAmount(amount, rate, duration);
-    const val = calculatedValue.toFixed(2);
-    cy.wrap(val).as("projectedValue");
+    cy.calculateProjectedAmount(amount, rate, duration).as("projectedValue");
+    cy.enterInvestmentAmount(amount);
   }
 );
 
@@ -175,7 +181,7 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add(
-  "addDurationandVerifyRate",
+  "addDurationAndVerifyRate",
   (
     durationValue,
     threeYrsRate,
@@ -231,13 +237,4 @@ Cypress.Commands.add("waitForProjectedValue", () => {
   cy.verifyInvestmentAmountInputElement();
   cy.verifyButtonElement();
   cy.waitUntil(() => cy.get(projectedValue).should("not.be.null"));
-  cy.waitUntil(() => cy.get(projectedValue).should("not.have.text"));
-  cy.verifyInvestmentAmountInputElement();
-  cy.verifyButtonElement();
-  cy.verifyInvestmentAmountInputElement();
-  cy.verifyButtonElement();
-  cy.verifyInvestmentAmountInputElement();
-  cy.verifyButtonElement();
-  cy.verifyInvestmentAmountInputElement();
-  cy.verifyButtonElement();
 });
