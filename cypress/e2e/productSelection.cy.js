@@ -1,5 +1,5 @@
 import * as productDetails from "../fixtures/productPage.json";
-import inputValues from "../Utilities/inputData";
+import inputValues from "../utilities/inputData";
 
 const [
   mainHeading,
@@ -53,7 +53,7 @@ describe("GainBridge Application", () => {
     });
   });
 
-  it("validate the projected account value with minimum acceptable values", () => {
+  it("validate the projected account value with invested amount less than 1000", () => {
     cy.enterInvestmentAmount(minInvestmentAmount);
     cy.slideLabelValue();
     cy.verifyRateAndDuration(
@@ -65,7 +65,7 @@ describe("GainBridge Application", () => {
     cy.verifyEmptyProjectedValue();
   });
 
-  it("validate the projected account value with maximum acceptable values", () => {
+  it("validate the projected account value with invested amount greater than 1000000", () => {
     cy.enterInvestmentAmount(maxInvestmentAmount);
     cy.slideLabelValue();
     cy.verifyRateAndDuration(
