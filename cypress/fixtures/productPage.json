@@ -12,5 +12,7 @@
     "fourYrsRate" : "6.1%",
     "fiveYrsRate" : "6.15%"
   },
-  "sliderValue" : 0
+  "sliderValue" : 0,
+  "investmentAmount999" : 999,
+  "investmentAmount1000001" : 1000001
 }
