@@ -1,6 +1,44 @@
 # gainbridge-qa
 
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+
+   git clone "https://github.com/SureshQAExpert/gainbridge-qa.git"
+   cd repository
+
+2. Install dependencies:
+
+    npm install
+
+3. So that all dependencies which are present in package.json will be installed in your system
+
+# Cypress-Automation
+
+Cypress is a next generation front end testing tool built for the modern web.
+
+This project aims to automate test cases for verifying UI elements and validating functionality across a range of input values.
+
 ## Cypress Automation Execution Procedure ?
+
+# To run:-
+1. Once all dependencies are installed
+
+2. Run the following command which will open Cypress dashboard
+```
+npx cypress open
+```
+
+3. Execute the provided command to initiate the execution of the ProductSelection spec file, which will automatically trigger the generation of the associated report.
+
+```
+npm run cypress:run
+```
+4. Above command will execute the scripts
+
+5. By default our scripts will execute in Electron browser and uses to verify UI elements and validate functionality with differnt input values
 
 To execute the automation scripts, run the following command in the command line:
 
