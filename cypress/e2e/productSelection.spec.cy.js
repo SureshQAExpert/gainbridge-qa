@@ -10,6 +10,7 @@ let durationValue;
 
 describe("GainBridge Application", () => {
   beforeEach("login", () => {
+    cy.task("clearDirectory", "cypress/results/");
     cy.visit(Cypress.config("baseUrl"));
   });
 
