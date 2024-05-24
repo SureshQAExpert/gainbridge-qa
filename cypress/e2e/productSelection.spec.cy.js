@@ -70,7 +70,7 @@ describe("GainBridge Application", () => {
     cy.verifyEmptyProjectedValue();
   });
 
-  it("validating the project account value with time duration 10 years", () => {
+  it("validating the projected account value with time duration 10 years", () => {
     cy.enterInvestmentAmount(amount.validInvestmentAmount);
     cy.slider();
     cy.slideLabelValue();
@@ -86,7 +86,7 @@ describe("GainBridge Application", () => {
     });
   });
 
-  it("validating the project account value with duration 5 years", () => {
+  it("validating the projected account value with duration 5 years", () => {
     cy.enterInvestmentAmount(amount.validInvestmentAmount);
     cy.setSliderValue(productDetails.sliderValue);
     cy.slideLabelValue();
@@ -102,7 +102,7 @@ describe("GainBridge Application", () => {
     });
   });
 
-  it("validating the project account value with investment amount of 999", () => {
+  it("validating the projected account value with investment amount of 999", () => {
     cy.enterInvestmentAmount(productDetails.investmentAmount999);
     cy.slideLabelValue();
     cy.verifyRateAndDuration(
@@ -114,7 +114,7 @@ describe("GainBridge Application", () => {
     cy.verifyEmptyProjectedValue();
   });
 
-  it("validating the project account value with an investment amount of 1,000,001", () => {
+  it("validating the projected account value with an investment amount of 1,000,001", () => {
     cy.enterInvestmentAmount(productDetails.investmentAmount1000001);
     cy.slideLabelValue();
     cy.verifyRateAndDuration(
